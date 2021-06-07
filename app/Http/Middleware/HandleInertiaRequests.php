@@ -46,8 +46,8 @@ class HandleInertiaRequests extends Middleware
                 ? $request->user()->only('id', 'name', 'email')
                 : null,
 
-            'auth.user.cart' => fn() => $request->user()->cart
-                ? $request->user()->cart->products
+            'cart' => fn() => $request->user()?->cart
+                ? $request->user()?->cart?->products
                 : null,
         ]);
     }

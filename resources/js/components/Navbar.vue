@@ -143,7 +143,7 @@
                                     v-if="cartOpen"
                                     class="absolute w-full mt-2 origin-top-right right-50 md:max-w-screen-sm md:w-screen ">
 
-                                    <div v-for="(item,index) in $page.props.auth.user.cart" :key="item.id"
+                                    <div v-for="(item,index) in $page.props.cart" :key="item.id"
                                          class="w-1/2 px-2 pt-2 pb-4 bg-white rounded-md shadow-lg dark-mode:bg-gray-700">
                                         <div class="flex flex-col space-y-2">
                                             <div class="flex flex-row justify-around text-sm">
@@ -297,7 +297,7 @@ export default {
 
     }),
     mounted() {
-        console.log(this.$page.props)
+        console.log(this.$page.props.auth.user)
     },
     methods:
         {

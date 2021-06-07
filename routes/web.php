@@ -73,7 +73,7 @@ Route::get('/shop/fiter', function (Request $request) {
 
 })->name('shop.filter');
 
-Route::get('/cart', function () {
+Route::middleware('auth')->get('/cart', function () {
 
     $products = \Illuminate\Support\Facades\Auth::user()->cart->products;
 
