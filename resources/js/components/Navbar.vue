@@ -161,7 +161,7 @@
                                                     </p>
                                                 </div>
                                                 <div>
-                                                    <i @click="remove(index)"
+                                                    <i @click="remove(item.id)"
                                                        class="items-end self-end mt-16 text-xl text-pink-500 trash far fa-trash-alt"></i>
                                                 </div>
 
