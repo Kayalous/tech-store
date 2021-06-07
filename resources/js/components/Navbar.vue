@@ -301,8 +301,24 @@ export default {
     },
     methods:
         {
-            remove(index) {
-                this.items.splice(index, 1)
+            remove(id) {
+                let form = this.$inertia.form({'product_id': id})
+
+                form.delete(route('cart.remove'), {
+                    preserveScroll: true,
+                    onSuccess: () => {
+                        this.$toast.open({
+                            message: 'Item removed!',
+                            type: 'success',
+                            duration: 1000,
+                            position: 'top'
+                        })
+                    },
+                    onError: () => {
+                    },
+                    onFinish: () => {
+                    },
+                })
             },
             handleComplete() {
 

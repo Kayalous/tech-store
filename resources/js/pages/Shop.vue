@@ -123,7 +123,7 @@ export default {
         getNewData() {
             let vm = this;
             const requestOptions = {
-                method: "GET",
+                method: "POST",
                 body: {
                     'sortBy': vm.sort,
                     'minPrice': vm.range[0],

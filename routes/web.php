@@ -61,7 +61,7 @@ Route::get('/shop', function (Request $request) {
 
 })->name('shop');
 
-Route::get('/shop/fiter', function (Request $request) {
+Route::post('/shop/fiter', function (Request $request) {
 
 
     $products = Product::orderBy('price', $request->sortBy ? $request->sortBy : 'asc')->where('price', '>=', $request->minPrice)->where('price', '<', $request->maxPrice)->paginate(15);
